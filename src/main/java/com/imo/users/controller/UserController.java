@@ -4,16 +4,12 @@ import com.imo.users.model.User;
 import com.imo.users.service.UserService;
 import com.imo.users.vo.UserVo;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
@@ -42,6 +38,7 @@ public class UserController {
         userService.deleteUser(user);
     }
 
+    @GetMapping
     public List<User> getAll(){
         return userService.findAll();
     }

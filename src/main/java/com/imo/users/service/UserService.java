@@ -2,8 +2,6 @@ package com.imo.users.service;
 
 import com.imo.users.model.User;
 import com.imo.users.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
 @RequiredArgsConstructor
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public void createUser(User user){
         if(userRepository.existsByCpf(user.getCpf())){

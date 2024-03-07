@@ -8,11 +8,11 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "user")
+@Table(name = "usuario")
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
